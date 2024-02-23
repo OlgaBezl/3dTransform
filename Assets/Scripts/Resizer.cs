@@ -7,6 +7,6 @@ public class Resizer : MonoBehaviour
     private void Update()
     {
         float scaleFactor = _speed * Time.deltaTime;
-        transform.localScale += new Vector3(scaleFactor, scaleFactor, scaleFactor);
+        transform.localScale += Vector3.one * scaleFactor;
     }
 }
