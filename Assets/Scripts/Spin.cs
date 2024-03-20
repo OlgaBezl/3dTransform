@@ -1,11 +1,13 @@
 using UnityEngine;
+using DG.Tweening;
 
 public class Spin : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _duration = 1f;
+    [SerializeField] private Vector3 _target;
 
-    private void Update()
+    private void Start()
     {
-        transform.RotateAround(Vector3.up, _speed * Time.deltaTime);
+        transform.DORotate(_target, _duration).SetLoops(-1, LoopType.Restart);
     }
 }

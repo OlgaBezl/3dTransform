@@ -1,12 +1,13 @@
+using DG.Tweening;
 using UnityEngine;
 
 public class Resizer : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField] private float _duration = 1f;
+    [SerializeField] private Vector3 _target;
 
-    private void Update()
+    private void Start()
     {
-        float scaleFactor = _speed * Time.deltaTime;
-        transform.localScale += Vector3.one * scaleFactor;
+        transform.DOScale(_target, _duration).SetLoops(-1, LoopType.Yoyo);
     }
 }
